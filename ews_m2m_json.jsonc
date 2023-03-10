@@ -1,0 +1,248 @@
+
+/****************** Login **********************/
+
+//Request
+{
+    "activity":"login",
+    "force_login":"0",
+    "mobile_number":"60162685747",
+    "mobile_token":"fXtkTVGYQyS5peHe3ybGUA:APA91"
+}
+
+//Reply OK
+{
+    "status":"ok",
+    "activity":"login",
+    "data":{
+        "user_id":"PAM123"
+    }
+}
+
+//Reply Error
+{
+    "status":"err",
+    "activity":"login",
+    "data":{
+        "user_id":"PAM123",
+        "error_code":123,
+        "error_msg":"Duplicate Login"
+    }
+}
+/*************************************************/
+
+
+/****************** Get Sites **********************/
+
+//Request
+{
+    "activity":"req_sites",
+    "user_id":"PAM123",
+    "mobile_token":"fXtkTVGYQyS5peHe3ybGUA:APA91"
+}
+
+//Reply OK
+{
+    "status":"ok",
+    "activity":"req_sites",
+    "data":{
+        "user_id":"PAM123",
+        "result":[
+            {
+                "site_id":"ID001",
+                "site_name":"KOLAM TENGAH"
+            },
+
+            {
+                "site_id":"ID002",
+                "site_name":"KOLAM TEPI"
+            },
+
+            {
+                "site_id":"ID003",
+                "site_name":"KOLAM BELAKANG"
+            },
+        ]
+    }
+}
+
+//Reply Error
+{
+    "status":"err",
+    "activity":"req_sites",
+    "data":{
+        "user_id":"PAM123",
+        "error_code":123,
+        "error_msg":"Invalid token"
+    }
+}
+/*************************************************/
+
+
+/****************** Get Input for Individual Site **********************/
+
+//Request
+{
+    "activity":"req_site_input",
+    "user_id":"PAM123",
+    "mobile_token":"fXtkTVGYQyS5peHe3ybGUA:APA91",
+    "site_id":"ID001"
+}
+
+//Reply OK
+{
+    "status":"ok",
+    "activity":"req_site_input",
+    "data":{
+        "user_id":"PAM123",
+        "site_id":"ID001",
+        "site_name":"KOLAM TENGAH",
+        "result":[
+            {
+                "input_num":1,
+                "input_name":"Pump 1",
+                "input_stat": 0
+            },
+
+            {
+                "input_num":2,
+                "input_name":"Pump 2",
+                "input_stat": 0
+            },
+
+            {
+                "input_num":3,
+                "input_name":"Pump 3",
+                "input_stat": 0
+            },
+
+            {
+                "input_num":4,
+                "input_name":"Pump 4",
+                "input_stat": 0
+            },
+
+            {
+                "input_num":5,
+                "input_name":"Pump 5",
+                "input_stat": 1
+            },
+        ]
+    }
+}
+
+//Input Stat: 0-disable, 1-high, 2-low
+
+//Reply Error
+{
+    "status":"err",
+    "activity":"req_site_input",
+    "data":{
+        "user_id":"PAM123",
+        "error_code":123,
+        "error_msg":"Invalid token"
+    }
+}
+/*************************************************/
+
+
+/****************** Get Output for Individual Site **********************/
+
+//Request
+{
+    "activity":"req_site_output",
+    "user_id":"PAM123",
+    "mobile_token":"fXtkTVGYQyS5peHe3ybGUA:APA91",
+    "site_id":"ID001"
+}
+
+//Reply OK
+{
+    "status":"ok",
+    "activity":"req_site_output",
+    "data":{
+        "user_id":"PAM123",
+        "site_id":"ID001",
+        "site_name":"KOLAM TENGAH",
+        "result":[
+            {
+                "output_num":1,
+                "output_name":"Pump 1",
+                "output_stat": 0
+            },
+
+            {
+                "output_num":2,
+                "output_name":"Pump 2",
+                "output_stat": 0
+            },
+
+            {
+                "output_num":3,
+                "output_name":"Pump 3",
+                "output_stat": 0
+            },
+
+            {
+                "output_num":4,
+                "output_name":"Pump 4",
+                "output_stat": 0
+            },
+
+            {
+                "output_num":5,
+                "output_name":"Pump 5",
+                "output_stat": 1
+            },
+        ]
+    }
+}
+
+//Input Stat: 0-disable, 1-high, 2-low
+
+//Reply Error
+{
+    "status":"err",
+    "activity":"req_site_output",
+    "data":{
+        "user_id":"PAM123",
+        "error_code":123,
+        "error_msg":"Invalid token"
+    }
+}
+/*************************************************/
+
+
+/****************** Set Output for Individual Site **********************/
+
+//Request
+{
+    "activity":"set_output",
+    "user_id":"PAM123",
+    "mobile_token":"fXtkTVGYQyS5peHe3ybGUA:APA91",
+    "site_id":"ID001",
+    "output_num": 4,
+    "set_output_stat": 1
+}
+
+//Reply OK
+{
+    "status":"ok",
+    "activity":"set_output",
+    "data":{
+        "user_id":"PAM123",
+        "output_num": 4
+    }
+}
+
+//Reply Error
+{
+    "status":"err",
+    "activity":"set_output",
+    "data":{
+        "user_id":"PAM123",
+        "error_code":123,
+        "error_msg":"Invalid token"
+    }
+}
+
+/*************************************************/
